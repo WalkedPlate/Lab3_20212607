@@ -44,7 +44,7 @@
             <td th:text="${obj.index+1}"> </td>
             <td th:text="${oftalmologo.nombre}"></td>
             <td th:text="${oftalmologo.correo}"></td>
-            <td th:if="${oftalmologo.clinicaId == listaClinicas.get(obj).id}"  th:text="${listaClinicas.get(obj).nombre}"></td>
+            <td th:if="${oftalmologo.clinicaId == listaClinicas.get(obj.index).id}"  th:text="${listaClinicas.get(obj).nombre}"></td>
 
 
         </tr>
