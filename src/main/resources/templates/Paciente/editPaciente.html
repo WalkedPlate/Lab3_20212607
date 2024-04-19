@@ -33,11 +33,11 @@
 <div style="padding-bottom: 15px;" class="container">
     <div style="text-align: center;"><h2>Editar Pacienter</h2></div>
     <form method="post" th:action="@{/paciente/guardar}" th:object="${paciente}">
-        <input type="hidden" th:field="*{idPaciente}">
+        <input type="hidden" th:field="*{id}">
 
         <div class="mb-3">
             <label for="fecha_cita">Fecha</label>
-            <input id="fecha_cita" type="text" class="form-control" name="fecha_cita" th:field="*{fecha_cita}">
+            <input id="fecha_cita" type="text" class="form-control" name="fecha_cita" th:field="*{fechaCita}">
         </div>
 
         <button type="submit" class="btn btn-primary">Guardar</button>

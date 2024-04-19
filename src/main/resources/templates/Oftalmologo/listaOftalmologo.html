@@ -40,11 +40,11 @@
             <th>Clinica </th>
 
         </tr>
-        <tr th:each="oftalmologo, obj : ${lista}" >
+        <tr th:each="oftalmologo, obj : ${lista}">
             <td th:text="${obj.index+1}"> </td>
             <td th:text="${oftalmologo.nombre}"></td>
             <td th:text="${oftalmologo.correo}"></td>
-            <td th:text="${oftalmologo.clinicaId}"></td>
+            <td th:if="${oftalmologo.clinicaId == listaClinicas.get(obj).id}"  th:text="${listaClinicas.get(obj).nombre}"></td>
 
 
         </tr>
