@@ -224,8 +224,18 @@ public class TimerActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
-        if (item.getItemId() == R.id.action_power){
+        if (item.getItemId() == R.id.action_power) {
+
             Log.d("EXIT", "Session cerrada.");
+
+            if (pomodoroCountDownTimer != null) {
+                pomodoroCountDownTimer.cancel();
+                pomodoroCountDownTimer = null;  // Libera la referencia
+            }
+            if (descansoCountDownTimer != null) {
+                descansoCountDownTimer.cancel();
+                descansoCountDownTimer = null;  // Libera la referencia
+            }
 
             Intent intent = new Intent(this, LoginActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -236,6 +246,8 @@ public class TimerActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
