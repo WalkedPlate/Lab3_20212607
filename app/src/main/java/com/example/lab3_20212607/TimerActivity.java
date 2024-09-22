@@ -27,7 +27,6 @@ import java.util.concurrent.TimeUnit;
 public class TimerActivity extends AppCompatActivity {
 
     private Bundle datosUsuarioLogeado;
-    private int userId;
     private String nombre;
     private String apellido;
     private String correo;
@@ -35,19 +34,18 @@ public class TimerActivity extends AppCompatActivity {
 
     private boolean existenToDos;
     private List<ToDo> toDos;
-
-    ImageButton controlButton;
-    TextView timerCountdown;
-
-    TextView estadoLabel;
-
-    int timerOn = 1;
+    private int userId;
 
     CountDownTimer pomodoroCountDownTimer;
     long pomodoroTimer = TimeUnit.MINUTES.toMillis(25);
-
     CountDownTimer descansoCountDownTimer;
     long descansoTimer = TimeUnit.MINUTES.toMillis(5);
+
+    ImageButton controlButton;
+    TextView timerCountdown;
+    TextView estadoLabel;
+    int timerOn = 1;
+
 
 
     @Override
